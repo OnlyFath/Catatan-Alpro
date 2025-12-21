@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Algoritma Pemrograman</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #2d3748;
+            font-size: 1.1em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card a::before {
+            content: '📘';
+            font-size: 1.5em;
+        }
+
+        .card:hover a {
+            color: #667eea;
+        }
+
+        .subsection {
+            margin-top: 15px;
+        }
+
+        .subsection-title {
+            font-size: 1.3em;
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-left: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.4em;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 MATERI ALGORITMA PEMROGRAMAN</h1>
+            <p>Catatan Materi Algoritma Pemrograman Selama 1 Semester</p>
+            <p style="margin-top: 15px; font-size: 1em;">
+                <strong>Nama:</strong> Achmad Fathir Muzakky<br>
+                <strong>NIM:</strong> 250411100201
+            </p>
+        </div>
+
+        <div class="content">
+            <!-- Section 1 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">1</span>
+                    Pengenalan
+                </h2>
+                <div class="card-container">
+                    <div class="card">
+                        <a href="1Peng.html">1.1 Pengenalan Algoritma</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">2</span>
+                    Struktur Data
+                </h2>
+                <div class="card-container">
+                    <div class="card">
+                        <a href="2TipeData.html">2.1 Tipe Data</a>
+                    </div>
+                    <div class="card">
+                        <a href="2Variabel.html">2.2 Variabel</a>
+                    </div>
+                    <div class="card">
+                        <a href="2Operator.html">2.3 Operator Operand</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">3</span>
+                    Algoritma dan Flowchart
+                </h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Algoritma</h3>
+                    <div class="card-container">
+                        <div class="card">
+                            <a href="3Pengalgo.html">3.1 Pengenalan Algoritma</a>
+                        </div>
+                        <div class="card">
+                            <a href="3SeqAlgo.html">3.2.1 Sequence (Urutan)</a>
+                        </div>
+                        <div class="card">
+                            <a href="3BranAlgo.html">3.2.2 Branches (Selection)</a>
+                        </div>
+                        <div class="card">
+                            <a href="3IterAlgo.html">3.2.3 Iteration (Loop)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Flowchart</h3>
+                    <div class="card-container">
+                        <div class="card">
+                            <a href="3Flow.html">3.3 Flowchart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">4</span>
+                    String, List, Tuple
+                </h2>
+                <div class="card-container">
+                    <div class="card">
+                        <a href="4String.html">4.1 String</a>
+                    </div>
+                    <div class="card">
+                        <a href="4List.html">4.2 List</a>
+                    </div>
+                    <div class="card">
+                        <a href="4Tuple.html">4.3 Tuple</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">5</span>
+                    Fungsi dan Fungsi Rekursif
+                </h2>
+                <div class="card-container">
+                    <div class="card">
+                        <a href="5Fungsi.html">5.1 Fungsi</a>
+                    </div>
+                    <div class="card">
+                        <a href="5Rekru.html">5.2 Fungsi Rekursif</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="section-number">6</span>
+                    Dictionary
+                </h2>
+                <div class="card-container">
+                    <div class="card">
+                        <a href="6Dict.html">6.1 Dictionary</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
